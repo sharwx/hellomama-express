@@ -22,39 +22,23 @@ module.exports = (sequelize, DataTypes) => {
     },
     location_name: {
       allowNull: false,
-      type: DataTypes.STRING,
-      validate: {
-        notNull: {
-          msg: 'Please enter name of location'
-        }
-      }
+      type: DataTypes.STRING
+    },
+    slug: {
+      allowNull: false,
+      type: DataTypes.STRING
     },
     location_description: {
       allowNull: false,
-      type: DataTypes.TEXT,
-      validate: {
-        notNull: {
-          msg: 'Where is the room located?'
-        }
-      }
+      type: DataTypes.TEXT
     },
     location_level: {
       allowNull: false,
-      type: DataTypes.STRING,
-      validate: {
-        notNull: {
-          msg: 'Which level is the room at?'
-        }
-      }
+      type: DataTypes.STRING
     },
     address: {
       allowNull: false,
-      type: DataTypes.TEXT,
-      validate: {
-        notNull: {
-          msg: 'Please enter address'
-        }
-      }
+      type: DataTypes.TEXT
     },
     photo: {
       type: DataTypes.TEXT
@@ -75,16 +59,41 @@ module.exports = (sequelize, DataTypes) => {
         max: 180
       }
     },
+    changing_station: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
+    sink: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
+    hot_water_dispenser: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
+    power_point: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
+    lockable: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
     user_id: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
-    createdAt: {
+    created_at: {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW
     },
-    updatedAt: {
+    updated_at: {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW

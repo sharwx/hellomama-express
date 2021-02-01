@@ -12,11 +12,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TINYINT.UNSIGNED,
         defaultValue: 0,
-        validate: {
-          notNull: {
-            msg: 'Please rate'
-          }
-        }
       },
       user_id: {
         allowNull: false,
@@ -26,15 +21,20 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BIGINT.UNSIGNED
       },
+      location_slug: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       comments: {
+        allowNull: true,
         type: Sequelize.TEXT
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW

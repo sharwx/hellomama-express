@@ -11,38 +11,27 @@ module.exports = {
       username: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true,
-        validate: {
-          notNull: {
-            msg: 'Please enter your username'
-          }
-        }
+        unique: true
       },
       email: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true,
-        validate: {
-          notNull: {
-            msg: 'Please enter your email'
-          }
-        }
+        unique: true
       },
-      password: {
+      pwsalt: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      hash: {
         allowNull: false,
         type: Sequelize.STRING,
-        validate: {
-          notNull: {
-            msg: 'Please enter your password'
-          }
-        }
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW

@@ -23,38 +23,27 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       allowNull: false,
       type: DataTypes.STRING,
-      unique: true,
-      validate: {
-        notNull: {
-          msg: 'Please enter your username'
-        }
-      }
+      unique: true
     },
     email: {
       allowNull: false,
       type: DataTypes.STRING,
-      unique: true,
-      validate: {
-        notNull: {
-          msg: 'Please enter your email'
-        }
-      }
+      unique: true
     },
-    password: {
+    pwsalt: {
       allowNull: false,
-      type: DataTypes.STRING,
-      validate: {
-        notNull: {
-          msg: 'Please enter your password'
-        }
-      }
+      type: DataTypes.STRING
     },
-    createdAt: {
+    hash: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    created_at: {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW
     },
-    updatedAt: {
+    updated_at: {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW

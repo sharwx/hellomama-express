@@ -1,4 +1,7 @@
 'use strict';
+
+const { sequelize } = require("../models");
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Locations', {
@@ -10,39 +13,23 @@ module.exports = {
       },
       location_name: {
         allowNull: false,
-        type: Sequelize.STRING,
-        validate: {
-          notNull: {
-            msg: 'Please enter name of location'
-          }
-        }
+        type: Sequelize.STRING
+      },
+      slug: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
       location_description: {
         allowNull: false,
-        type: Sequelize.TEXT,
-        validate: {
-          notNull: {
-            msg: 'Where is the room located?'
-          }
-        }
+        type: Sequelize.TEXT
       },
       location_level: {
         allowNull: false,
-        type: Sequelize.STRING,
-        validate: {
-          notNull: {
-            msg: 'Which level is the room at?'
-          }
-        }
+        type: Sequelize.STRING
       },
       address: {
         allowNull: false,
-        type: Sequelize.TEXT,
-        validate: {
-          notNull: {
-            msg: 'Please enter address'
-          }
-        }
+        type: Sequelize.TEXT
       },
       photo: {
         type: Sequelize.TEXT
@@ -63,16 +50,41 @@ module.exports = {
           max: 180
         }
       },
+      changing_station: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
+      sink: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
+      hot_water_dispenser: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
+      power_point: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
+      lockable: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
