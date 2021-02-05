@@ -26,7 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     slug: {
       allowNull: false,
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: true
     },
     location_description: {
       allowNull: false,
@@ -84,9 +85,13 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: false
     },
-    user_id: {
+    username: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
+    },
+    email: {
+      allowNull: false,
+      type: DataTypes.STRING
     },
     created_at: {
       allowNull: false,

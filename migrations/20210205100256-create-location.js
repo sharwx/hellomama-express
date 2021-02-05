@@ -17,7 +17,8 @@ module.exports = {
       },
       slug: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING, 
+        unique: true
       },
       location_description: {
         allowNull: false,
@@ -75,9 +76,13 @@ module.exports = {
         allowNull: false,
         defaultValue: false
       },
-      user_id: {
+      username: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
+      },
+      email: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
       created_at: {
         allowNull: false,

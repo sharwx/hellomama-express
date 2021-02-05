@@ -40,13 +40,11 @@ app.get('/api/v1/users/profile', verifyJWT, userControllers.getUserProfile)
 
 // Locations Route
 app.get('/api/v1/locations', locationControllers.getAllLocation) //get all locations
-// app.get('/api/v1/locations/new', locationControllers.newLocationForm) //get location form
-app.post('/api/v1/locations', locationControllers.createLocation) //create location
-// app.get('/api/v1/locations/:slug', locationControllers.getLocation) //get single location
-// app.get('/api/v1/locations/:slug/edit', locationControllers.showEditForm) //get update location form
-// app.patch('/api/v1/locations/:slug', locationControllers.updateLocation) //update location
-// app.delete('/api/v1/locations/:slug', locationControllers.deleteLocation) //delete location
-// app.get('/api/v1/users/locations', locationControllers.getUserLocation) //get user locations
+app.post('/api/v1/locations/new', verifyJWT, locationControllers.createLocation) //create location
+app.get('/api/v1/locations/:slug', locationControllers.getLocation) //get single location
+app.patch('/api/v1/locations/:slug', verifyJWT, locationControllers.updateLocation) //update location
+app.delete('/api/v1/locations/:slug', verifyJWT, locationControllers.deleteLocation) //delete location
+app.get('/api/v1/users/locations', verifyJWT, locationControllers.getUserLocation) //get user locations
 
 //  Ratings Route
 // app.get('/api/v1/locations/:slug/ratings/new', ratingControllers.newRatingForm')

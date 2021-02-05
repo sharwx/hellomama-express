@@ -16,7 +16,8 @@ module.exports = {
       hot_water_dispenser: true,
       power_point: false,
       lockable: false,
-      user_id: 1,
+      username: 'user1',
+      email: 'user1@email.com',
       created_at : new Date(),
       updated_at : new Date(),
     }], {});

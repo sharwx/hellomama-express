@@ -5,6 +5,13 @@ const RatingModel = Rating(sequelize.sequelize, sequelize.Sequelize.DataTypes)
 
 const ratingControllers = {
 
+    newRatingForm: (req, res) => {
+
+    },
+
+    createRating: (req, res) => {
+        
+    }
 
 }
 

@@ -108,6 +108,7 @@ const userControllers = {
                                 })
                     })
                 .catch(err => {
+                    console.log(err)
                     res.statusCode = 400
                     res.json({
                         "success": false,
@@ -116,6 +117,7 @@ const userControllers = {
                 })
             })
             .catch(err => {
+                console.log(err)
                 res.statusCode = 400
                 res.json({
                     "success": false,
